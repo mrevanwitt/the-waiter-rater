@@ -45,6 +45,18 @@ app.post('/server', function(req, res, next) {
   });
 });
 
+app.get('/serverdata/:id', function(req, res, next) {
+  db.get_server_data_by_restaurant_id(req.params.id, function(err, serverData) {
+    res.status(200).send(serverData);
+  });
+});
+
+app.post('/serverdata', function(req, res, next) {
+  db.post_server_data(req.body.sever_id, req.body.date_created, req.body.customer_service_rating, req.body.appearance_rating, req.body.drinks_rating, req.body.timeliness_rating, req.body.accuracy_rating, req.body.highest_percent, req.body.lowest_percent, req.body.bill_total, req.body.tip_percent, req.body.tip_amount, req.body.final_bill_total, req.body.feedback, function(err) {
+    res.status(200);
+  });
+});
+
 app.delete('/server', function(req, res, next) {
   console.log('delete user by id');
 });
