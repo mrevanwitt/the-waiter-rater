@@ -55,3 +55,8 @@ create table manager (
   first_name varchar(30),
   last_name varchar(30)
 );
+
+insert into manager
+  (restaurant_id, username, first_name, last_name)
+values
+  (3, 'testmanager', 'Test', 'Manager');

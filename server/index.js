@@ -41,6 +41,7 @@ app.get('/server/:id', function(req, res, next) {
 
 app.post('/server', function(req, res, next) {
   db.post_server(req.body.restaurant_id, req.body.first_name, req.body.last_name, req.body.first_name_last_initial, function(err){
+    console.log(err);
     res.status(200);
   });
 });
