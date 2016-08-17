@@ -13,7 +13,7 @@ var db = app.get('db');
 
 app.use(bodyparser.json());
 app.use(cors());
-app.use(express.static(__dirname + './../pulic'));
+app.use(express.static(__dirname + './../public'));
 
 app.get('/restaurant', function(req, res, next) {
   db.get_all_restaurants(function(err, resuaurants) {
@@ -29,6 +29,7 @@ app.get('/restaurant/:id', function(req, res, next) {
 
 app.get('/server/restaurant/:id', function(req, res, next) {
   db.get_all_servers_by_restaurant_id(req.params.id, function(err, servers) {
+    console.log(req.params.id)
     res.status(200).send(servers);
   });
 });
@@ -41,7 +42,6 @@ app.get('/server/:id', function(req, res, next) {
 
 app.post('/server', function(req, res, next) {
   db.post_server(req.body.restaurant_id, req.body.first_name, req.body.last_name, req.body.first_name_last_initial, function(err){
-    console.log(err);
     res.status(200);
   });
 });
@@ -51,6 +51,12 @@ app.get('/serverdata/:id', function(req, res, next) {
     res.status(200).send(serverData);
   });
 });
+
+app.get('/manager', function(req, res, next) {
+  db.get_manager(function(err, manager) {
+    res.status(200).send(manager)
+  })
+})
 
 app.post('/serverdata', function(req, res, next) {
   db.post_server_data(req.body.sever_id, req.body.date_created, req.body.customer_service_rating, req.body.appearance_rating, req.body.drinks_rating, req.body.timeliness_rating, req.body.accuracy_rating, req.body.highest_percent, req.body.lowest_percent, req.body.bill_total, req.body.tip_percent, req.body.tip_amount, req.body.final_bill_total, req.body.feedback, function(err) {

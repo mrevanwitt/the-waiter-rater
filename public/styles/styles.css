@@ -32,9 +32,8 @@
   float: left;
 }
 
-.footer {
+.mid-section {
   width: 80vw;
-  color: grey;
-  height: 8vh;
-  z-index: 5  ;
+  height: 90vh;
+  margin: auto;
 }

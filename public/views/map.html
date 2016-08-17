@@ -1,0 +1,4 @@
+<select ng-model="value">
+  <option ng-repeat="item in restaurants" value="{{item.id}}">{{item.restaurant_name}}</option>
+</select>
+<button type="button" name="button" ui-sref="waiterRater({id: value})">Button</button>

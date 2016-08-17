@@ -1,5 +1,12 @@
 angular.module('waiterRater')
   .controller('mainCtrl', function($scope, mainServ) {
-    $scope.test = mainServ.test
-    $scope.tests = "tests"
+    $scope.getRestaurants = function() {
+      mainServ.getRestaurants()
+      .then(function(response) {
+        $scope.restaurants = response.data;
+      });
+    };
+
+    $scope.getRestaurants();
+
   });
