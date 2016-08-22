@@ -1,0 +1,26 @@
+<p style="text-align: center; font-size:24px;" ng-model="value">{{restaurantName}}<button ui-sref="addServer({id:restaurantId})" type="button" name="button">Add New Server</button>
+</p>
+<table style="border-style: solid; border-width: 2px;">
+  <tr>
+    <th>
+      First Name
+    </th>
+    <th>
+      LastName
+    </th>
+    <th>
+      Accuracy Rating
+    </th>
+  </tr>
+  <tr ng-repeat="item in serverData">
+    <td>
+      {{item.first_name}}
+    </td>
+    <td>
+      {{item.last_name}}
+    </td>
+    <td>
+      {{item.accuracy_rating}}
+    </td>
+  </tr>
+</table>

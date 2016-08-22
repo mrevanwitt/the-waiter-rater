@@ -1,3 +1,50 @@
-<ul ng-repeat="item in servers">
-  <li>{{item.first_name_last_initial}}</li>
-</ul>
+<div class="error">
+    {{errorMessage}}
+</div>
+<div class="select">
+    <select ng-model="lowData.model">
+        <option ng-repeat="option in lowData.options" value="{{option.value}}">{{option.name}}</option>
+    </select>
+    <select ng-model="highData.model">
+        <option ng-repeat="option in highData.options" value="{{option.value}}">{{option.name}}</option>
+    </select>
+</div>
+<div class="seekbar">
+    <span>Customer Service</span>
+    <input type="range" value="0" min="0" max="5" ng-model="customerServiceVal">
+    <p>
+        {{customerServiceVal}}
+    </p>
+    <span>Timeliness</span>
+    <input type="range" value="0" min="0" max="5" ng-model="timelinessVal">
+    <p>
+        {{timelinessVal}}
+    </p>
+    <span>Accuracy</span>
+    <input type="range" value="0" min="0" max="5" ng-model="accuracyVal">
+    <p>
+        {{accuracyVal}}
+    </p>
+    <span>Drinks</span>
+    <input type="range" value="0" min="0" max="5" ng-model="drinksVal">
+    <p>
+        {{drinksVal}}
+    </p>
+    <span>Appearance</span>
+    <input type="range" value="0" min="0" max="5" ng-model="appearanceVal">
+    <p>
+        {{appearanceVal}}
+    </p>
+</div>
+<div class="calculate">
+    <input type="number" name="name" value="" placeholder="Bill Total" ng-model="billTotal">
+    <select ng-model="serverId">
+      <option ng-repeat="item in servers" value="{{item.id}}">{{item.first_name_last_initial}}</option>
+    </select>
+    <textarea ng-model="feedback" rows="4" cols="20"></textarea>
+    <div class="" ng-click="calculate(billTotal, serverId, feedback)">
+      <p>
+        Calculate
+      </p>
+    </div>
+</div>

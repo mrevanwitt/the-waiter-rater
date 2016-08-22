@@ -6,7 +6,6 @@ angular.module('waiterRater')
       mainServ.getManagers()
         .then(function(response) {
           $scope.managers = response.data
-          console.log(response)
         })
     }
 

@@ -6,18 +6,17 @@ angular.module('waiterRater')
         url: '/restaurant'
       }).then(function(response) {
         return response;
-      })
-    }
+      });
+    };
 
     this.getServers = function(id) {
       return $http({
         method: 'GET',
         url: '/server/restaurant/' + id.toString()
       }).then(function(response) {
-        console.log(response)
         return response;
-      })
-    }
+      });
+    };
 
     this.getManagers = function() {
       return $http({
@@ -25,6 +24,48 @@ angular.module('waiterRater')
         url: '/manager'
       }).then(function(response) {
         return response;
-      })
-    }
-  })
+      });
+    };
+
+    this.getServerDataManagerId = function(id) {
+      return $http({
+        method: 'GET',
+        url: '/serverdata/manager/' + id.toString()
+      }).then(function(response) {
+        return response;
+      });
+    };
+
+    this.postServerData = function(serverData) {
+      return $http({
+        method: 'POST',
+        url: '/serverdata',
+        data: serverData
+      });
+    };
+
+    this.getServerDataServerId = function(id) {
+      return $http({
+        method: 'GET',
+        url: '/serverdata/server/' + id.toString()
+      }).then(function(response) {
+        return response;
+      });
+    };
+
+    this.getServerDataById = function(id) {
+      return $http({
+        method: 'GET',
+        url: '/serverdata/' + id.toString()
+      });
+    };
+
+    this.AddServer = function(newServer) {
+      return $http({
+        method: 'POST',
+        url: '/addServer',
+        data: newServer
+      });
+    };
+
+  });
