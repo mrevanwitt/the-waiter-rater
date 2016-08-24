@@ -1,4 +1,20 @@
-<select ng-model="value">
-  <option ng-repeat="item in restaurants" value="{{item.id}}">{{item.restaurant_name}}</option>
-</select>
-<button type="button" name="button" ui-sref="waiterRater({id: value})">Button</button>
+<section class="map-section">
+    <img src="https://hd.unsplash.com/photo-1416772472542-01fdd961f986" alt="" />
+    <div class="ui-map">
+      <div class="ui-box">
+        <h1>
+          Select a restarant
+        </h1>
+        <select ng-model="value">
+            <option ng-repeat="item in restaurants" value="{{item.id}}">{{item.restaurant_name}}</option>
+        </select>
+        <button class="btn" type="button" name="button" ui-sref="waiterRater({id: value})">Button</button>
+      </div>
+    </div>
+
+    <div class="restaurant-header">
+        <p>
+            Tip your waiter based on performance
+        </p>
+    </div>
+</section>

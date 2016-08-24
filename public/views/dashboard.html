@@ -1,26 +1,70 @@
-<p style="text-align: center; font-size:24px;" ng-model="value">{{restaurantName}}<button ui-sref="addServer({id:restaurantId})" type="button" name="button">Add New Server</button>
-</p>
-<table style="border-style: solid; border-width: 2px;">
-  <tr>
-    <th>
-      First Name
-    </th>
-    <th>
-      LastName
-    </th>
-    <th>
-      Accuracy Rating
-    </th>
-  </tr>
-  <tr ng-repeat="item in serverData">
-    <td>
-      {{item.first_name}}
-    </td>
-    <td>
-      {{item.last_name}}
-    </td>
-    <td>
-      {{item.accuracy_rating}}
-    </td>
-  </tr>
-</table>
+<section class="dashboard">
+  <p style="text-align: center; font-size:24px;" ng-model="value">{{restaurantName}}<button class="btn" ui-sref="addServer({id:restaurantId})" type="button" name="button">Add New Server</button>
+  </p>
+  <table style="border-style: solid; border-width: 2px;">
+    <tr>
+      <th class="rotate">
+        First Name
+      </th>
+      <th>
+        LastName
+      </th>
+      <th>
+        Customer Service Rating
+      </th>
+      <th>
+        Appearance Rating
+      </th>
+      <th>
+        Drinks Rating
+      </th>
+      <th>
+        timeliness Rating
+      </th>
+      <th>
+        Accuracy Rating
+      </th>
+      <th>
+        Average Score
+      </th>
+      <th>
+        Tip Percent
+      </th>
+      <th>
+        Feedback
+      </th>
+    </tr>
+    <tr ng-repeat="item in serverData">
+      <td  ng-click="clicked(item.server_id)">
+        {{item.first_name}}
+      </td>
+      <td>
+        {{item.last_name}}
+      </td>
+      <td>
+        {{item.customer_service_rating}}
+      </td>
+      <td>
+        {{item.appearance_rating}}
+      </td>
+      <td>
+        {{item.drinks_rating}}
+      </td>
+      <td>
+        {{item.timeliness_rating}}
+      </td>
+      <td>
+        {{item.accuracy_rating}}
+      </td>
+      <td>
+        {{item.average}}
+      </td>
+      <td>
+        {{item.tip_percent}}
+      </td>
+      <td>
+        {{item.feedback}}
+      </td>
+    </tr>
+  </table>
+</section>

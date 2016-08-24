@@ -12,8 +12,8 @@ angular.module('waiterRater', ['ui.router'])
         controller: 'waiterRaterCtrl',
         controllerAs: 'vm'
       })
-      .state('manager', {
-        url:'/manager',
+      .state('login', {
+        url:'/login',
         templateUrl: '.././views/manager.html',
         controller: 'managerCtrl'
       })
@@ -32,4 +32,12 @@ angular.module('waiterRater', ['ui.router'])
         templateUrl:'.././views/addServer.html',
         controller: 'addServerCtrl'
       })
+      .state('waiter', {
+        url:'/waiter/:id',
+        templateUrl: '.././views/waiter.html',
+        controller: 'waiterCtrl'
+      })
+
+      $urlRouterProvider
+        .otherwise('/')
   })

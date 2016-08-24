@@ -2,30 +2,33 @@
 <html ng-app="waiterRater">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./styles/reset.css" media="screen" title="no title" charset="utf-8">
+    <!-- //<link rel="stylesheet" href="./styles/reset.css" media="screen" title="no title" charset="utf-8"> -->
     <link rel="stylesheet" href="./styles/styles.css" media="screen" title="no title" charset="utf-8">
     <title></title>
   </head>
   <body ng-controller="mainCtrl">
     <section class="nav">
       <ul>
-        <li ui-sref="map">Home</li>
-        <li ui-sref="manager">manger</li>
-        <li>Test</li>
+        <li ui-sref="map">The Waiter Rater</li>
       </ul>
     </section>
-    <section class="right-side">
+    <!-- <section class="right-side">
 
-    </section>
-    <section class="left-side">
-    </section>
+    </section> -->
+    <!-- <section class="left-side">
+    </section> -->
 
-    <section class="mid-section">
-      <ui-view></ui-view>
-    </section>
+    <ui-view></ui-view>
+    <!-- <section class="footer">
+      <div class="">
 
+      </div>
+    </section> -->
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+
     <script src="./js/app.js"></script>
     <script src="./js/waiterRaterCtrl.js"></script>
     <script src="./js/managerCtrl.js"></script>
