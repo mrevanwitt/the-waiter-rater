@@ -53,7 +53,7 @@ app.post('/addServer', function(req, res, next) {
 
 app.get('/serverdata/:id', function(req, res, next) {
   db.get_server_data_by_id(req.params.id, function(err, serverData) {
-    console.log(serverData)
+    //console.log(serverData)
     res.status(200).send(serverData)
   })
 })
@@ -72,18 +72,24 @@ app.get('/serverdata/manager/:id', function(req, res, next) {
 
 app.get('/serverdata/server/:id', function(req, res, next) {
     db.get_server_data_by_server_id(req.params.id, function(err, serverData) {
-        console.log(err);
+        //console.log(err);
         res.status(200).send(serverData);
     });
 });
 
-// app.get('/serverdata/:id', function (req, res) {
-//   console.log("hit");
-//   db.server_data.findOne({id: req.params.id}, function (err, serverData) {
-//     console.log("SERVER DATA: ", err, serverData);
-//     res.send(serverData);
-//   });
-// });
+app.get('/serverdata/:id', function (req, res) {
+  console.log("hit");
+  db.server_data.findOne({id: req.params.id}, function (err, serverData) {
+    //console.log("SERVER DATA: ", err, serverData);
+    res.send(serverData);
+  });
+});
+
+app.get('/waiter/:id', function (req, res, next) {
+  db.get_server_by_id(req.params.id, function(err, server) {
+    res.status(200).send(server)
+  })
+})
 
 app.post('/serverdata', function(req, res, next) {
     db.server_data.insert({

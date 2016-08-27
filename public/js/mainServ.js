@@ -60,6 +60,13 @@ angular.module('waiterRater')
       });
     };
 
+    this.getServer = function(id) {
+      return $http({
+        method: 'GET',
+        url: '/waiter/' + id.toString()
+      });
+    };
+
     this.AddServer = function(newServer) {
       return $http({
         method: 'POST',

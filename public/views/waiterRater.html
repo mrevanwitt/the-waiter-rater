@@ -1,54 +1,123 @@
+<section class="waiter-rater-view">
+    <img class="plate-img" src="./img/restaurant_check.jpg" alt="" />
+    <section class="waiter-rater-box">
 
+    </section>
+    <section class="waiter-rater-container">
 
-<section class="waiter-rater-ui">
-    <div class="error">
-        {{errorMessage}}
-    </div>
-    <div class="select">
-        <select ng-model="lowData.model">
-            <option ng-repeat="option in lowData.options" value="{{option.value}}">{{option.name}}</option>
-        </select>
-        <select ng-model="highData.model">
-            <option ng-repeat="option in highData.options" value="{{option.value}}">{{option.name}}</option>
-        </select>
-    </div>
-    <div class="seekbar">
-        <span>Customer Service</span>
-        <input id='test' type="range" value="0" min="0" max="5" ng-model="customerServiceVal">
-        <p>
-            {{customerServiceVal}}
-        </p>
-        <span>Timeliness</span>
-        <input type="range" value="0" min="0" max="5" ng-model="timelinessVal">
-        <p>
-            {{timelinessVal}}
-        </p>
-        <span>Accuracy</span>
-        <input type="range" value="0" min="0" max="5" ng-model="accuracyVal">
-        <p>
-            {{accuracyVal}}
-        </p>
-        <span>Drinks</span>
-        <input type="range" value="0" min="0" max="5" ng-model="drinksVal">
-        <p>
-            {{drinksVal}}
-        </p>
-        <span>Appearance</span>
-        <input type="range" value="0" min="0" max="5" ng-model="appearanceVal">
-        <p>
-            {{appearanceVal}}
-        </p>
-    </div>
-    <div class="calculate">
-        <input type="number" name="name" value="" placeholder="Bill Total" ng-model="billTotal">
-        <select ng-model="serverId">
-            <option ng-repeat="item in servers" value="{{item.id}}">{{item.first_name_last_initial}}</option>
-        </select>
-        <textarea ng-model="feedback" rows="4" cols="20"></textarea>
-        <div class="" ng-click="calculate(billTotal, serverId, feedback)">
-            <p>
-                Calculate
-            </p>
+        <div class="error-message">
+            {{errorMessage}}
         </div>
-    </div>
+        <p class="tipRange">
+            Tip Range
+        </p>
+        <div class="select">
+            <p>
+                Low&nbsp&nbsp&nbsp
+            </p>
+            <select ng-model="lowData.model">
+                <option ng-repeat="option in lowData.options" value="{{option.value}}">{{option.name}}</option>
+            </select>
+            <p>
+                &nbsp&nbsp&nbsp-&nbsp&nbsp&nbsp
+            </p>
+            <select ng-model="highData.model">
+                <option ng-repeat="option in highData.options" value="{{option.value}}">{{option.name}}</option>
+            </select>
+            <p>
+                &nbsp&nbsp&nbspHigh
+            </p>
+            <!-- <input id="test" type="range" name="name" value="" min="0" max="4" ng-model="lowRange">
+        <p>
+            {{lowRange * 5}}%&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsp
+        </p>
+        <p>
+            {{highRange * 5}}%
+        </p>
+        <input type="range" name="name" value="" min="3" max="7" ng-model="highRange"> -->
+        </div>
+
+        <table class="waiter-rater-table">
+            <tr>
+                <th width="47%">
+                    <span>Customer Service</span>
+                </th>
+                <th width="44%">
+                    <input type="range" value="0" min="0" max="5" ng-model="customerServiceVal">
+                </th>
+                <th width="9%">
+                    <p>
+                        {{customerServiceVal}}
+                    </p>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <span>Timeliness</span>
+                </td>
+                <td>
+                    <input type="range" value="0" min="0" max="5" ng-model="timelinessVal">
+                </td>
+                <td>
+                    <p>
+                        {{timelinessVal}}
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Accuracy</span>
+                </td>
+                <td>
+                    <input type="range" value="0" min="0" max="5" ng-model="accuracyVal">
+                </td>
+                <td>
+                    <p>
+                        {{accuracyVal}}
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Drinks</span>
+                </td>
+                <td>
+                    <input type="range" value="0" min="0" max="5" ng-model="drinksVal">
+                </td>
+                <td>
+                    <p>
+                        {{drinksVal}}
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Appearance</span>
+                </td>
+                <td>
+                    <input type="range" value="0" min="0" max="5" ng-model="appearanceVal">
+                </td>
+                <td>
+                    <p>
+                        {{appearanceVal}}
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <div class="calculate">
+            <input class="billTotal" type="number" name="name" value="" placeholder="Bill Total" ng-model="billTotal">
+            <p class="serverName">
+                Server Name:
+            </p>
+            <select class="serverNameInput" ng-model="serverId">
+                <option ng-repeat="item in servers" value="{{item.id}}">{{item.first_name_last_initial}}</option>
+            </select>
+            <textarea class="feedback" ng-model="feedback" rows="4" cols="35" placeholder="Feedback"></textarea>
+            <div class="calculateBtn btn" ng-click="calculate(billTotal, serverId, feedback)">
+                <p>
+                    Calculate
+                </p>
+            </div>
+        </div>
+    </section>
 </section>

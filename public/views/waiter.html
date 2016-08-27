@@ -1,0 +1,62 @@
+<section class="dashboard">
+  <table>
+    <tr>
+      <th>
+          Date
+      </th>
+      <th>
+          First Name
+      </th>
+      <th>
+          Last Name
+      </th>
+      <th>
+          Customer Service
+      </th>
+      <th>
+          Appearance
+      </th>
+      <th>
+          Drinks
+      </th>
+      <th>
+          timeliness
+      </th>
+      <th>
+          Accuracy
+      </th>
+      <th>
+          Average Score
+      </th>
+    </tr>
+    <tr ng-repeat="item in server">
+      <td>
+        {{item.date_created}}
+      </td>
+      <td>
+        {{item.first_name}}
+      </td>
+      <td>
+        {{item.last_name}}
+      </td>
+      <td>
+        {{item.customer_service_rating}}
+      </td>
+      <td>
+        {{item.appearance_rating}}
+      </td>
+      <td>
+        {{item.drinks_rating}}
+      </td>
+      <td>
+        {{item.timeliness_rating}}
+      </td>
+      <td>
+        {{item.timeliness_rating}}
+      </td>
+      <td>
+        {{item.average}}
+      </td>
+    </tr>
+  </table>
+</section>

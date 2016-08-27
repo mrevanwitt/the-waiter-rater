@@ -9,6 +9,9 @@ angular.module('waiterRater')
     };
     $scope.getServers($stateParams.id);
 
+    $scope.lowRange = 0;
+    $scope.highRange = 0;
+
     $scope.errorMessage = "Error Message";
 
     $scope.lowData = {

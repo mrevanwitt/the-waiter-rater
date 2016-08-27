@@ -1,4 +1,4 @@
-angular.module('waiterRater', ['ui.router'])
+angular.module('waiterRater', ['ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap'])
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('map', {
@@ -14,7 +14,7 @@ angular.module('waiterRater', ['ui.router'])
       })
       .state('login', {
         url:'/login',
-        templateUrl: '.././views/manager.html',
+        templateUrl: '.././views/login.html',
         controller: 'managerCtrl'
       })
       .state('dashboard', {
