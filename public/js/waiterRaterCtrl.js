@@ -79,7 +79,9 @@ angular.module('waiterRater')
       $scope.serverData.tip_percent = (tipPerc * 100).toFixed(1) + "%";
       $scope.serverData.tip_amount = tipAmt;
       $scope.serverData.final_bill_total = finalTotal;
-      $scope.serverData.date_created = new Date();
+      $scope.serverData.date_created = moment().format('MMMM Do YYYY, h:mm:ss a');
+
+      console.log($scope.serverData.date_created);
 
 
       mainServ.postServerData($scope.serverData).then(function(response) {

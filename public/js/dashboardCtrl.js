@@ -13,7 +13,7 @@ angular.module('waiterRater')
           var monthDay = date.slice(5,7)
           var day = date.slice(8,10);
 
-          var months = {'jan', 'feb'}
+          
 
           console.log(year, monthDay, day);
 

@@ -1,8 +1,9 @@
 <div ng-controller="dashboardCtrl as $ctrl">
 <section class="dashboard">
-    <p style="text-align: center; font-size:24px;" ng-model="value">{{restaurantName}}
-        <button class="btn" ng-click="$ctrl.open()" type="button" name="button">Add New Server</button>
+    <p class="restaurant-name" ng-model="value">
+      {{restaurantName}}
     </p>
+    <button class="btn" ng-click="$ctrl.open()" type="button" name="button">Add New Server</button>
     <table style="border-style: solid; border-width: 2px;">
         <tr>
             <th>
@@ -84,7 +85,7 @@
           <input type="text" name="name" value="" placeholder="Last Name" ng-model="lastName">
         </div>
         <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+            <button class="btn" type="button" ng-click="$ctrl.ok()">OK</button>
             <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
         </div>
     </script>

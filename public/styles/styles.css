@@ -1,28 +1,35 @@
 @import 'https://fonts.googleapis.com/css?family=Oswald';
 
 * {
-  font-family: "Oswald"
+  font-family: "Oswald";
 }
 
 .nav {
+  font-family: "Oswald";
   width:100%;
   height: 10vh;
   background: #454545;
 }
 
+.nav p{
+  font-size:18px;
+  color: #C09F80;
+  position: absolute;
+  top:15px;
+  right:10px;
+}
+
 .nav ul {
   display: flex;
   justify-content: center;
-
 }
 
 .nav ul li {
   color: #C09F80;
   margin-left: 50px;
   margin-right: 50px;
-  padding-top: 30px;
-  font-size: 36px;
-  font-style: italic;
+  padding-top: 10px;
+  font-size: 46px;
 }
 
 /*.right-side {
@@ -60,7 +67,7 @@
   /*background-size: contain;*/
 }
 
-.map-section .restaurant-header{
+.map-section .restaurant-footer{
   height: 10vh;
   width: 100%;
   background: #454545;
@@ -233,6 +240,14 @@ box-sizing: border-box;
   height: 100%;
   font-family: Arial;
   background: #D7CEC7;
+  flex-direction: column;
+  display: flex;
+  align-content: center;
+}
+
+.restaurant-name {
+  text-align: center;
+  font-size:30px;
 }
 
 .dashboard table {
@@ -281,6 +296,17 @@ box-sizing: border-box;
   text-align:center;
 }
 
+/*//////////////////////////Waiter View*/
+
+#chart_div{
+  position: relative;
+  top:0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin:auto;
+  margin-bottom: 30px;
+}
 
 /*/////////////////////Waiter Rater View*/
 
@@ -465,7 +491,28 @@ box-sizing: border-box;
 }
 
 
+/*///////////////////////////Modal*/
 
+.modal-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.modal-body input{
+  height: 35px;
+  width: 45%;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.modal-footer button {
+  width: 45% !important;
+}
 
 
 /*///////////////////////////Input*/
