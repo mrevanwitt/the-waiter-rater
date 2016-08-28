@@ -39,7 +39,9 @@ app.get('/server/:id', function(req, res, next) {
     });
 });
 
-app.post('/addServer', function(req, res, next) {
+app.post('/postServer', function(req, res, next) {
+  console.log('hit')
+
     db.post_server(req.body.restaurant_id, req.body.first_name, req.body.last_name, req.body.first_name_last_initial, function(err) {
         res.status(200);
     });

@@ -3,19 +3,19 @@ angular.module('waiterRater')
     $scope.getServerDataManagerId = function(id) {
       mainServ.getServerDataManagerId(id)
         .then(function(response) {
-          console.log(response)
+          console.log($stateParams)
           $scope.serverData = response.data
           $scope.restaurantName = response.data[0].restaurant_name;
           $scope.restaurantId = response.data[0].restaurant_id;
 
-          var date = response.data[15].date_created.toString();
-          var year = date.slice(0,4);
-          var monthDay = date.slice(5,7)
-          var day = date.slice(8,10);
+          // var date = response.data[15].date_created.toString();
+          // var year = date.slice(0,4);
+          // var monthDay = date.slice(5,7)
+          // var day = date.slice(8,10);
 
-          
 
-          console.log(year, monthDay, day);
+
+          //console.log(year, monthDay, day);
 
         })
     }
@@ -33,6 +33,7 @@ angular.module('waiterRater')
   $ctrl.animationsEnabled = true;
 
   $ctrl.open = function (size) {
+    console.log($scope.restaurantId)
     var modalInstance = $uibModal.open({
       animation: $ctrl.animationsEnabled,
       ariaLabelledBy: 'modal-title',
@@ -43,7 +44,7 @@ angular.module('waiterRater')
       size: size,
       resolve: {
         items: function () {
-          return $ctrl.items;
+          return $scope.restaurantId;
         }
       }
     });
@@ -78,11 +79,26 @@ angular.module('waiterRater')
 // Please note that $uibModalInstance represents a modal window (instance) dependency.
 // It is not the same as the $uibModal service used above.
 
-angular.module('waiterRater').controller('ModalInstanceCtrl', function ($uibModalInstance, items) {
+angular.module('waiterRater').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items, mainServ) {
   var $ctrl = this;
 
+  //console.log(items);
+
+  //$ctrl.firstName = $scope.firstName;
+
+  //console.log($ctrl)
 
   $ctrl.ok = function () {
+
+    console.log($scope.firstName);
+
+    $ctrl.first_name = $scope.firstName.charAt(0).toUpperCase() + $scope.firstName.slice(1);
+    $ctrl.last_name = $scope.lastName.charAt(0).toUpperCase() + $scope.lastName.slice(1);
+    $ctrl.first_name_last_initial = $ctrl.first_name + " " + $ctrl.last_name.slice(0, 1) + ".";
+    $ctrl.restaurant_id = items;
+
+    console.log($ctrl);
+    mainServ.postServer($ctrl);
     $uibModalInstance.close();
   };
 

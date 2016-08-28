@@ -67,10 +67,10 @@ angular.module('waiterRater')
       });
     };
 
-    this.AddServer = function(newServer) {
+    this.postServer = function(newServer) {
       return $http({
         method: 'POST',
-        url: '/addServer',
+        url: '/postServer',
         data: newServer
       });
     };

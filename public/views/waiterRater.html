@@ -36,7 +36,9 @@
         </p>
         <input type="range" name="name" value="" min="3" max="7" ng-model="highRange"> -->
         </div>
-
+        <p class="ratings">
+          Ratings
+        </p>
         <table class="waiter-rater-table">
             <tr>
                 <th width="47%">
@@ -112,7 +114,7 @@
             <select class="serverNameInput" ng-model="serverId">
                 <option ng-repeat="item in servers" value="{{item.id}}">{{item.first_name_last_initial}}</option>
             </select>
-            <textarea class="feedback" ng-model="feedback" rows="4" cols="35" placeholder="Feedback"></textarea>
+            <textarea class="feedback" ng-model="feedback" rows="4" cols="25" placeholder="Feedback"></textarea>
             <div class="calculateBtn btn" ng-click="calculate(billTotal, serverId, feedback)">
                 <p>
                     Calculate

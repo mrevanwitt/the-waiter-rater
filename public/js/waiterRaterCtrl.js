@@ -12,12 +12,9 @@ angular.module('waiterRater')
     $scope.lowRange = 0;
     $scope.highRange = 0;
 
-    $scope.errorMessage = "Error Message";
-
     $scope.lowData = {
       model: null,
       options: [
-        {name: '0%', value: 0},
         {name: '5%', value: 5},
         {name: '10%', value: 10},
         {name: '15%', value: 15},
@@ -31,8 +28,7 @@ angular.module('waiterRater')
         {name: '15%', value: 15},
         {name: '20%', value: 20},
         {name: '25%', value: 25},
-        {name: '30%', value: 30},
-        {name: '35%', value: 35}
+        {name: '30%', value: 30}
       ]
     };
 
@@ -54,6 +50,8 @@ angular.module('waiterRater')
 
       var high = parseInt($scope.highData.model);
       var low = parseInt($scope.lowData.model);
+
+      console.log(low);
 
       var avg = ((custServ + time + accur + drinks + appear) / 5);
       var mult = ((high - low) / 5);
@@ -81,15 +79,39 @@ angular.module('waiterRater')
       $scope.serverData.final_bill_total = finalTotal;
       $scope.serverData.date_created = moment().format('MMMM Do YYYY, h:mm:ss a');
 
-      console.log($scope.serverData.date_created);
 
+      if (low > high) {
+        $scope.errorMessage = "Low cannot be greater than High";
+        $scope.errors = true;
+      } else if (low === high) {
+        $scope.errorMessage = "Low and High cannot be the same value";
+        $scope.errors = true;
+      } else if (!serverId) {
+        $scope.errorMessage = "Please select a Server Name";
+        $scope.errors = true;
+      } else if (!high) {
+        $scope.errorMessage = "Please select a value for High";
+        $scope.errors = true;
+      } else if (!low) {
+        $scope.errorMessage = "Please select a value for Low";
+        $scope.errors = true;
+      } else if (!billTotal) {
+        $scope.errorMessage = "Please enter a valid Bill Total";
+        $scope.errors = true;
+      } else {
+        $scope.errors = false;
+        $scope.errorMessage = " ";
+      }
 
-      mainServ.postServerData($scope.serverData).then(function(response) {
-        console.log("New Server Data: ", response.data);
-        $state.go('thankYou', {id: response.data.id});
-      });
+      console.log($scope.errors)
 
-
+      if ($scope.errors === false) {
+        console.log("Hellow")
+        mainServ.postServerData($scope.serverData).then(function(response) {
+          console.log("New Server Data: ", response.data);
+          $state.go('thankYou', {id: response.data.id});
+        });
+      }
 
       //console.log(typeof $scope.serverId);
 

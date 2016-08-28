@@ -1,94 +1,94 @@
 <div ng-controller="dashboardCtrl as $ctrl">
-<section class="dashboard">
-    <p class="restaurant-name" ng-model="value">
-      {{restaurantName}}
-    </p>
-    <button class="btn" ng-click="$ctrl.open()" type="button" name="button">Add New Server</button>
-    <table style="border-style: solid; border-width: 2px;">
-        <tr>
-            <th>
-                Date
-            </th>
-            <th>
-                First Name
-            </th>
-            <th>
-                Last Name
-            </th>
-            <th>
-                Customer Service
-            </th>
-            <th>
-                Appearance
-            </th>
-            <th>
-                Drinks
-            </th>
-            <th>
-                timeliness
-            </th>
-            <th>
-                Accuracy
-            </th>
-            <th>
-                Average Score
-            </th>
-            <th>
-                Tip Percent
-            </th>
-            <th>
-                Feedback
-            </th>
-        </tr>
-        <tr ng-repeat="item in serverData">
-            <td>
-                {{item.date_created}}
-            </td>
-            <td ui-sref="waiter({id:item.server_id})">
-                {{item.first_name}}
-            </td>
-            <td>
-                {{item.last_name}}
-            </td>
-            <td class="center-align">
-                {{item.customer_service_rating}}
-            </td>
-            <td class="center-align">
-                {{item.appearance_rating}}
-            </td>
-            <td class="center-align">
-                {{item.drinks_rating}}
-            </td>
-            <td class="center-align">
-                {{item.timeliness_rating}}
-            </td>
-            <td class="center-align">
-                {{item.accuracy_rating}}
-            </td>
-            <td class="center-align">
-                {{item.average}}
-            </td>
-            <td class="center-align">
-                {{item.tip_percent}}
-            </td>
-            <td>
-                {{item.feedback}}
-            </td>
-        </tr>
-    </table>
-    <script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-            <h3 class="modal-title" id="modal-title">Add new waiter</h3>
-        </div>
-        <div class="modal-body" id="modal-body">
-          <input type="text" name="name" value="" placeholder="First Name" ng-model="firstName">
-          <input type="text" name="name" value="" placeholder="Last Name" ng-model="lastName">
-        </div>
-        <div class="modal-footer">
-            <button class="btn" type="button" ng-click="$ctrl.ok()">OK</button>
-            <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
-        </div>
-    </script>
+    <section class="dashboard">
+        <p class="restaurant-name" ng-model="value">
+            {{restaurantName}}
+        </p>
+        <button class="btn" ng-click="$ctrl.open(restaurantId)" type="button" name="button">Add New Server</button>
+        <table style="border-style: solid; border-width: 2px;">
+            <tr>
+                <th>
+                    Date
+                </th>
+                <th>
+                    First Name
+                </th>
+                <th>
+                    Last Name
+                </th>
+                <th>
+                    Customer Service
+                </th>
+                <th>
+                    Appearance
+                </th>
+                <th>
+                    Drinks
+                </th>
+                <th>
+                    Timeliness
+                </th>
+                <th>
+                    Accuracy
+                </th>
+                <th>
+                    Average Score
+                </th>
+                <th>
+                    Tip Percent
+                </th>
+                <th>
+                    Feedback
+                </th>
+            </tr>
+            <tr ng-repeat="item in serverData">
+                <td>
+                    {{item.date_created}}
+                </td>
+                <td ui-sref="waiter({id:item.server_id})">
+                    {{item.first_name}}
+                </td>
+                <td>
+                    {{item.last_name}}
+                </td>
+                <td class="center-align">
+                    {{item.customer_service_rating}}
+                </td>
+                <td class="center-align">
+                    {{item.appearance_rating}}
+                </td>
+                <td class="center-align">
+                    {{item.drinks_rating}}
+                </td>
+                <td class="center-align">
+                    {{item.timeliness_rating}}
+                </td>
+                <td class="center-align">
+                    {{item.accuracy_rating}}
+                </td>
+                <td class="center-align">
+                    {{item.average}}
+                </td>
+                <td class="center-align">
+                    {{item.tip_percent}}
+                </td>
+                <td>
+                    {{item.feedback}}
+                </td>
+            </tr>
+        </table>
+        <script type="text/ng-template" id="myModalContent.html">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">Add new waiter</h3>
+            </div>
+            <div class="modal-body" id="modal-body" controller="dashboardCtrl">
+                <input type="text" name="name" value="" placeholder="First Name" ng-model="firstName">
+                <input type="text" name="name" value="" placeholder="Last Name" ng-model="lastName">
+            </div>
+            <div class="modal-footer">
+                <button class="btn" type="button" ng-click="$ctrl.ok()">OK</button>
+                <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+            </div>
+        </script>
 
-</section>
+    </section>
 </div>
