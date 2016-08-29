@@ -114,7 +114,7 @@
             <select class="serverNameInput" ng-model="serverId">
                 <option ng-repeat="item in servers" value="{{item.id}}">{{item.first_name_last_initial}}</option>
             </select>
-            <textarea class="feedback" ng-model="feedback" rows="4" cols="25" placeholder="Feedback"></textarea>
+            <textarea class="feedback" ng-model="feedback" rows="4" cols="22" placeholder="Feedback"></textarea>
             <div class="calculateBtn btn" ng-click="calculate(billTotal, serverId, feedback)">
                 <p>
                     Calculate

@@ -3,12 +3,8 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway:200';
 
 
-* {
-  font-family: "Prata";
-}
-
 input {
-  font-family: "Raleway";
+  font-family: "Raleway" !important;
 }
 
 .nav {
@@ -23,6 +19,7 @@ input {
   position: absolute;
   top:15px;
   right:10px;
+  cursor:pointer;
 }
 
 .nav ul {
@@ -31,11 +28,13 @@ input {
 }
 
 .nav ul li {
+  font-family: "Raleway" !important;
   color: #C09F80;
   margin-left: 50px;
   margin-right: 50px;
   padding-top: 10px;
   font-size: 46px;
+  cursor:pointer;
 }
 
 /*.right-side {
@@ -89,8 +88,8 @@ input {
 .map-section div p{
   color: #C09F80;
   margin: auto;
-  font-family: 'Oswald';
   font-size: 36px;
+  font-family: "Raleway" !important;
 }
 
 .map-section img{
@@ -116,6 +115,7 @@ input {
 }*/
 
 .ui-box {
+  font-family: "Raleway" !important;
   border-radius: 10px;
   margin:auto;
   width: 400px;
@@ -134,10 +134,9 @@ input {
 }
 
 .ui-box h1{
+  font-family: "Raleway" !important;
   font-size:22px;
   color:black;
-  font-style: italic;
-  font-family: serif;
 }
 
 .ui-box button{
@@ -305,6 +304,7 @@ box-sizing: border-box;
 /*//////////////////////////Waiter View*/
 
 #chart_div{
+  font-family: arial !important;
   position: relative;
   top:0;
   bottom: 0;
@@ -316,14 +316,12 @@ box-sizing: border-box;
 
 /*/////////////////////Waiter Rater View*/
 
-.waiter-rater-view {
-  font-family:arial;
-}
 
 .waiter-rater-view img{
   position: absolute;
   width: 100%;
-  height: 90vh;
+  min-height: 90vh;
+  height: 100%;
   z-index: -2;
   -webkit-filter: blur(2px);
 }
@@ -360,6 +358,8 @@ box-sizing: border-box;
   flex-direction: column;
   align-content: center;
   border-radius: 20px;
+  color:black;
+  font-weight:bold;
 }
 .tipRange{
   text-align: center;
@@ -399,6 +399,20 @@ box-sizing: border-box;
   width: 100%;
 }
 
+.waiter-rater-table td p{
+  text-align: center;
+  font-size: 20px;
+}
+
+.waiter-rater-table th p{
+  text-align: center;
+  font-size: 20px;
+}
+
+.waiter-rater-table td span {
+  text-align:right;s
+}
+
 .waiter-rater-table th:nth-child(1) {
   text-align: left;
   padding-left: 5px;
@@ -417,8 +431,9 @@ box-sizing: border-box;
 }
 
 .billTotal {
+  padding-left: 10px;
   width: 200px;
-  height: 20px;
+  height: 30px;
   border: solid 1px;
   margin-left: 45px;
   margin-top: 10px;
@@ -555,7 +570,7 @@ input[type=range]:focus {
 }
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 15.7px;
+  height: 10px;
   cursor: pointer;
   box-shadow: 0px 0px 0.6px #000000, 0px 0px 0px #0d0d0d;
   background: #454545;
@@ -565,7 +580,7 @@ input[type=range]::-webkit-slider-runnable-track {
 input[type=range]::-webkit-slider-thumb {
   box-shadow: 3px 3px 8.6px #000000, 0px 0px 3px #0d0d0d;
   border: 2.8px solid #000000;
-  height: 29px;
+  height: 24px;
   width: 22px;
   border-radius: 28px;
   background: #76323F;
