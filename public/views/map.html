@@ -3,12 +3,12 @@
     <div class="ui-map">
       <div class="ui-box">
         <h1>
-          Select a restarant
+          Select A Restarant
         </h1>
         <select ng-model="value">
             <option ng-repeat="item in restaurants" value="{{item.id}}">{{item.restaurant_name}}</option>
         </select>
-        <button class="btn" type="button" name="button" ui-sref="waiterRater({id: value})">Button</button>
+        <button class="btn" type="button" name="button" ui-sref="waiterRater({id: value})">Submit</button>
       </div>
     </div>
 

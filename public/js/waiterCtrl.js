@@ -6,6 +6,8 @@ angular.module('waiterRater')
         $scope.getServer = function(id) {
             mainServ.getServer(id).then(function(response) {
                 $scope.server = response.data;
+                $scope.firstName = response.data[0].first_name;
+                $scope.lastName = response.data[0].last_name;
                 console.log(response)
             });
         };

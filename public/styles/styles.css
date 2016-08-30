@@ -291,10 +291,9 @@ box-sizing: border-box;
   padding-left: 15px;
 }
 
-.dashboard table td:nth-child(2) {
-  color: blue;
+.blue {
+  color: blue !important;
   cursor: pointer;
-  column-width: 90px;
 }
 
 .center-align {
@@ -312,6 +311,11 @@ box-sizing: border-box;
   left: 0;
   margin:auto;
   margin-bottom: 30px;
+}
+
+.serverNameTable{
+  text-align:center;
+  font-size: 32px;
 }
 
 /*/////////////////////Waiter Rater View*/
